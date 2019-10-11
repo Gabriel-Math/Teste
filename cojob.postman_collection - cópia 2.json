@@ -1,0 +1,1438 @@
+{
+	"info": {
+		"_postman_id": "f51e7c6b-1f19-4599-90b4-dbd82737464c",
+		"name": "cojob",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "AuthorizationV2",
+						"value": "36302226848-f35acb300fd346474b2a6cd1bca7aed8"
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"nomeUsuario\": \"\",
+						\n\t\"senha\":\"\",\n\t\"organizacao\": \"\" /* cnpj da organização */\n}"
+				},
+				"url": {
+					"raw": "https://co-job.eprodutiva.com.br/api/login/v2/movel",
+					"protocol": "https",
+					"host": [
+						"co-job",
+						"eprodutiva",
+						"com",
+						"br"
+					],
+					"path": [
+						"api",
+						"login",
+						"v2",
+						"movel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Recuperar Senha",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "AuthorizationV2",
+						"value": "36302226848-f35acb300fd346474b2a6cd1bca7aed8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://co-job.eprodutiva.com.br/api/usuario/senha?email=email do usuário",
+					"protocol": "https",
+					"host": [
+						"co-job",
+						"eprodutiva",
+						"com",
+						"br"
+					],
+					"path": [
+						"api",
+						"usuario",
+						"senha"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "email do usuário"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar Agente",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "AuthorizationV2",
+						"value": "36302226848-f35acb300fd346474b2a6cd1bca7aed8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"razaoNome\": \"\",\n\t\"cnpjCpf\":\"\",\n\t\"nomeUsuario\": \"\",\n\t\"emailPrincipal\": \"\",\n\t\"senha\": \"\",\n\t\"tipo\": \"\" /* 0 = Agente, 1 = Cliente\n}"
+				},
+				"url": {
+					"raw": "https://co-job.eprodutiva.com.br/api/agente",
+					"protocol": "https",
+					"host": [
+						"co-job",
+						"eprodutiva",
+						"com",
+						"br"
+					],
+					"path": [
+						"api",
+						"agente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar Cliente",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "AuthorizationV2",
+						"value": "36302226848-f35acb300fd346474b2a6cd1bca7aed8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"razaoNome\": \"\",\n\t\"cnpjCpf\":\"\",\n\t\"nomeUsuario\": \"\",\n\t\"emailPrincipal\": \"\",\n\t\"senha\": \"\",\n\t\"tipo\": \"\" /* 0 = Agente, 1 = Cliente\n}"
+				},
+				"url": {
+					"raw": "https://co-job.eprodutiva.com.br/api/cliente",
+					"protocol": "https",
+					"host": [
+						"co-job",
+						"eprodutiva",
+						"com",
+						"br"
+					],
+					"path": [
+						"api",
+						"cliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adicionar Contato em Usuário",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "AuthorizationV2",
+						"value": "36302226848-f35acb300fd346474b2a6cd1bca7aed8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"tipoContato\": \"USER\",\n\t\"nome\":\"\",\n\t\"email\": \"\",\n\t\"referencia\": \"\", /* id do usuario */\n\t\"telefoneMovel\": \"\"\n}"
+				},
+				"url": {
+					"raw": "https://co-job.eprodutiva.com.br/api/contato/{idUsuario}",
+					"protocol": "https",
+					"host": [
+						"co-job",
+						"eprodutiva",
+						"com",
+						"br"
+					],
+					"path": [
+						"api",
+						"contato",
+						"{idUsuario}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Home Buscar Imagens Banner",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "AuthorizationV2",
+						"value": "36302226848-f35acb300fd346474b2a6cd1bca7aed8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://co-job.eprodutiva.com.br/api/event",
+					"protocol": "https",
+					"host": [
+						"co-job",
+						"eprodutiva",
+						"com",
+						"br"
+					],
+					"path": [
+						"api",
+						"event"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Home Lista de Categorias e Agentes Vinculados",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "AuthorizationV2",
+						"value": "36302226848-f35acb300fd346474b2a6cd1bca7aed8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://co-job.eprodutiva.com.br/api/competence/category/agent",
+					"protocol": "https",
+					"host": [
+						"co-job",
+						"eprodutiva",
+						"com",
+						"br"
+					],
+					"path": [
+						"api",
+						"competence",
+						"category",
+						"agent"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Agentes por Categoria",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "AuthorizationV2",
+						"value": "36302226848-f35acb300fd346474b2a6cd1bca7aed8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://co-job.eprodutiva.com.br/api/competence/category/{idCategoria}/agent",
+					"protocol": "https",
+					"host": [
+						"co-job",
+						"eprodutiva",
+						"com",
+						"br"
+					],
+					"path": [
+						"api",
+						"competence",
+						"category",
+						"{idCategoria}",
+						"agent"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Imagens do trabalho do Agente",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "AuthorizationV2",
+						"value": "36302226848-f35acb300fd346474b2a6cd1bca7aed8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://co-job.eprodutiva.com.br/api/agente/{id}/anexos",
+					"protocol": "https",
+					"host": [
+						"co-job",
+						"eprodutiva",
+						"com",
+						"br"
+					],
+					"path": [
+						"api",
+						"agente",
+						"{id}",
+						"anexos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Regiões de trabalho do Agente",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "AuthorizationV2",
+						"value": "36302226848-f35acb300fd346474b2a6cd1bca7aed8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://co-job.eprodutiva.com.br/api/agente/{id}/regiao",
+					"protocol": "https",
+					"host": [
+						"co-job",
+						"eprodutiva",
+						"com",
+						"br"
+					],
+					"path": [
+						"api",
+						"agente",
+						"{id}",
+						"regiao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar as Competências do Agente",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "AuthorizationV2",
+						"value": "36302226848-f35acb300fd346474b2a6cd1bca7aed8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://co-job.eprodutiva.com.br/api/competence/agent/{id}/service",
+					"protocol": "https",
+					"host": [
+						"co-job",
+						"eprodutiva",
+						"com",
+						"br"
+					],
+					"path": [
+						"api",
+						"competence",
+						"agent",
+						"{id}",
+						"service"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Contato do Usuário",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "AuthorizationV2",
+						"value": "36302226848-f35acb300fd346474b2a6cd1bca7aed8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://co-job.eprodutiva.com.br/api/contato/{idUsuário}/0",
+					"protocol": "https",
+					"host": [
+						"co-job",
+						"eprodutiva",
+						"com",
+						"br"
+					],
+					"path": [
+						"api",
+						"contato",
+						"{idUsuário}",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Informações Adicionais do Usuário",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "AuthorizationV2",
+						"value": "36302226848-f35acb300fd346474b2a6cd1bca7aed8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://co-job.eprodutiva.com.br/api/informacaoadicional/{idUsuario}/4",
+					"protocol": "https",
+					"host": [
+						"co-job",
+						"eprodutiva",
+						"com",
+						"br"
+					],
+					"path": [
+						"api",
+						"informacaoadicional",
+						"{idUsuario}",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Enviar dados para Log (Ao Clicar na categoria)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "AuthorizationV2",
+						"value": "36302226848-f35acb300fd346474b2a6cd1bca7aed8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"value\": \"\",\n\t\"logTypeId\":\"3\"\n}"
+				},
+				"url": {
+					"raw": "https://co-job.eprodutiva.com.br/api/log",
+					"protocol": "https",
+					"host": [
+						"co-job",
+						"eprodutiva",
+						"com",
+						"br"
+					],
+					"path": [
+						"api",
+						"log"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Agentes favoritos do Cliente",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "AuthorizationV2",
+						"value": "36302226848-f35acb300fd346474b2a6cd1bca7aed8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://co-job.eprodutiva.com.br/api/cliente/{idCliente}/agente",
+					"protocol": "https",
+					"host": [
+						"co-job",
+						"eprodutiva",
+						"com",
+						"br"
+					],
+					"path": [
+						"api",
+						"cliente",
+						"{idCliente}",
+						"agente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adicionar Agente nos Favoritos de um Cliente",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "AuthorizationV2",
+						"value": "36302226848-f35acb300fd346474b2a6cd1bca7aed8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"agente\": {\n\t\t\"id\":\"\"\n\t},\n\t\"cliente\":{\n\t\t\"id\":\"\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "https://co-job.eprodutiva.com.br/api/cliente/agente",
+					"protocol": "https",
+					"host": [
+						"co-job",
+						"eprodutiva",
+						"com",
+						"br"
+					],
+					"path": [
+						"api",
+						"cliente",
+						"agente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Alterar status da Relação entre Cliente e Agente",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "AuthorizationV2",
+						"value": "36302226848-f35acb300fd346474b2a6cd1bca7aed8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"statusModel\":\"\"\n}"
+				},
+				"url": {
+					"raw": "https://co-job.eprodutiva.com.br/api/cliente/agente",
+					"protocol": "https",
+					"host": [
+						"co-job",
+						"eprodutiva",
+						"com",
+						"br"
+					],
+					"path": [
+						"api",
+						"cliente",
+						"agente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar um Orçamento",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "AuthorizationV2",
+						"value": "36302226848-f35acb300fd346474b2a6cd1bca7aed8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"fonte\":\"ANDROID\",\n\t\"endereco\": {\n\t\t\n\t},\n\t\"cliente\": {\n\t\t\"id\":\"\"\n\t},\n\t\"dataAgendamentoInicio\":\"\",\n\t\"dataAgendamentoFim\":\"\",\n\t\"assunto\":\"Orçamento - Nome Cliente - Data da Criação no formato dd/MM/aaaa\",\n\t\"informacaoAdicional\":\"Observação do Orçamento\",\n\t\"agendaOrdemAgente\": [\n\t\t{\n\t\t\t\"agente\": {\n\t\t\t\t\"id\":\"\"\n\t\t\t}\n\t\t}\n\t]\n}"
+				},
+				"url": {
+					"raw": "https://co-job.eprodutiva.com.br/api/ordem",
+					"protocol": "https",
+					"host": [
+						"co-job",
+						"eprodutiva",
+						"com",
+						"br"
+					],
+					"path": [
+						"api",
+						"ordem"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Enviar Imagem para um Ordem",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "AuthorizationV2",
+						"value": "36302226848-f35acb300fd346474b2a6cd1bca7aed8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"value": "{\"quantity\":1}",
+							"type": "text"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": ""
+						}
+					]
+				},
+				"url": {
+					"raw": "https://co-job.eprodutiva.com.br/api/ordem/{orderId}/anexo?resize=0",
+					"protocol": "https",
+					"host": [
+						"co-job",
+						"eprodutiva",
+						"com",
+						"br"
+					],
+					"path": [
+						"api",
+						"ordem",
+						"{orderId}",
+						"anexo"
+					],
+					"query": [
+						{
+							"key": "resize",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Ordens de um Agente",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "AuthorizationV2",
+						"value": "36302226848-f35acb300fd346474b2a6cd1bca7aed8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://co-job.eprodutiva.com.br/api/ordem/agente/{idAgente}/agendamento",
+					"protocol": "https",
+					"host": [
+						"co-job",
+						"eprodutiva",
+						"com",
+						"br"
+					],
+					"path": [
+						"api",
+						"ordem",
+						"agente",
+						"{idAgente}",
+						"agendamento"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Fotos de uma Ordem",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "AuthorizationV2",
+						"value": "36302226848-f35acb300fd346474b2a6cd1bca7aed8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://co-job.eprodutiva.com.br/api/ordem/{id}/anexo",
+					"protocol": "https",
+					"host": [
+						"co-job",
+						"eprodutiva",
+						"com",
+						"br"
+					],
+					"path": [
+						"api",
+						"ordem",
+						"{id}",
+						"anexo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar dados de um Cliente",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "AuthorizationV2",
+						"value": "36302226848-f35acb300fd346474b2a6cd1bca7aed8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://co-job.eprodutiva.com.br/api/cliente/{id}",
+					"protocol": "https",
+					"host": [
+						"co-job",
+						"eprodutiva",
+						"com",
+						"br"
+					],
+					"path": [
+						"api",
+						"cliente",
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Objeti OrdemSituacao pelo código da Situação",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "AuthorizationV2",
+						"value": "36302226848-f35acb300fd346474b2a6cd1bca7aed8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://co-job.eprodutiva.com.br/api/ordem/situacao/codigo/{code}",
+					"protocol": "https",
+					"host": [
+						"co-job",
+						"eprodutiva",
+						"com",
+						"br"
+					],
+					"path": [
+						"api",
+						"ordem",
+						"situacao",
+						"codigo",
+						"{code}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Alterar situação de uma Ordem",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "AuthorizationV2",
+						"value": "36302226848-f35acb300fd346474b2a6cd1bca7aed8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"situacaoOrdem\": {\n\t\t\"id\":\"\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "https://co-job.eprodutiva.com.br/api/ordem/{id}/situacao?changesuborders=false",
+					"protocol": "https",
+					"host": [
+						"co-job",
+						"eprodutiva",
+						"com",
+						"br"
+					],
+					"path": [
+						"api",
+						"ordem",
+						"{id}",
+						"situacao"
+					],
+					"query": [
+						{
+							"key": "changesuborders",
+							"value": "false"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Ordens de um Cliente",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "AuthorizationV2",
+						"value": "36302226848-f35acb300fd346474b2a6cd1bca7aed8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://co-job.eprodutiva.com.br/api/cliente/{id}/ordem",
+					"protocol": "https",
+					"host": [
+						"co-job",
+						"eprodutiva",
+						"com",
+						"br"
+					],
+					"path": [
+						"api",
+						"cliente",
+						"{id}",
+						"ordem"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adicionar Facebook e/ou Instagram do Agente",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "AuthorizationV2",
+						"value": "36302226848-f35acb300fd346474b2a6cd1bca7aed8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"data\":[\n\t\t{\n\t\t\t\"reference\":\"\", /* id do agente */\n\t\t\t\"typeField\":\"textfield\",\n\t\t\t\"nameField\":\"\", /* instagram_name ou facebook_name */\n\t\t\t\"caption\":\"\", /* Instagram ou Facebook */\n\t\t\t\"listoptions\":\"\" /* http://instagram.com/_u/{NomeDoSeuUsuário} ou https://www.facebook.com/{NomeDaSuaPágina} */\n\t\t}\n\t]\n}"
+				},
+				"url": {
+					"raw": "https://co-job.eprodutiva.com.br/api/informacaoadicional/batch",
+					"protocol": "https",
+					"host": [
+						"co-job",
+						"eprodutiva",
+						"com",
+						"br"
+					],
+					"path": [
+						"api",
+						"informacaoadicional",
+						"batch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar Facebook ou Instagram do Agente",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "AuthorizationV2",
+						"value": "36302226848-f35acb300fd346474b2a6cd1bca7aed8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"data\":[\n\t\t{\n\t\t\t\"reference\":\"\", /* id do agente */\n\t\t\t\"typeField\":\"textfield\",\n\t\t\t\"nameField\":\"\", /* instagram_name ou facebook_name */\n\t\t\t\"caption\":\"\", /* Instagram ou Facebook */\n\t\t\t\"listoptions\":\"\" /* http://instagram.com/_u/{NomeDoSeuUsuário} ou https://www.facebook.com/{NomeDaSuaPágina} */\n\t\t}\n\t]\n}"
+				},
+				"url": {
+					"raw": "https://co-job.eprodutiva.com.br/api/informacaoadicional/batch",
+					"protocol": "https",
+					"host": [
+						"co-job",
+						"eprodutiva",
+						"com",
+						"br"
+					],
+					"path": [
+						"api",
+						"informacaoadicional",
+						"batch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adicionar Imagem de serviços  para o Agente",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "AuthorizationV2",
+						"value": "36302226848-f35acb300fd346474b2a6cd1bca7aed8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": ""
+						}
+					]
+				},
+				"url": {
+					"raw": "https://co-job.eprodutiva.com.br/api/agente/{id}/anexo",
+					"protocol": "https",
+					"host": [
+						"co-job",
+						"eprodutiva",
+						"com",
+						"br"
+					],
+					"path": [
+						"api",
+						"agente",
+						"{id}",
+						"anexo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Alterar status da Relação Competência Agente",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "AuthorizationV2",
+						"value": "36302226848-f35acb300fd346474b2a6cd1bca7aed8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"data\": [\n\t\t{\n\t\t\t\"id\":\"\",\n\t\t\t\"statusModel\":\"\",\n\t\t\t\"agente\":{\n\t\t\t\t\"id\":\"\"\n\t\t\t},\n\t\t\t\"servico\": {\n\t\t\t\t\"id\":\"\"\n\t\t\t},\n\t\t\t\"resourceCategory\": {\n                \"id\": \"\"\n\t\t\t}\n\t\t}\n\t]\n}"
+				},
+				"url": {
+					"raw": "https://co-job.eprodutiva.com.br/api/competence/batch",
+					"protocol": "https",
+					"host": [
+						"co-job",
+						"eprodutiva",
+						"com",
+						"br"
+					],
+					"path": [
+						"api",
+						"competence",
+						"batch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Categorias de Serviço",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "AuthorizationV2",
+						"value": "36302226848-f35acb300fd346474b2a6cd1bca7aed8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://co-job.eprodutiva.com.br/api/categoria?tipo=3",
+					"protocol": "https",
+					"host": [
+						"co-job",
+						"eprodutiva",
+						"com",
+						"br"
+					],
+					"path": [
+						"api",
+						"categoria"
+					],
+					"query": [
+						{
+							"key": "tipo",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Serviços vinculados a Categoria",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "AuthorizationV2",
+						"value": "36302226848-f35acb300fd346474b2a6cd1bca7aed8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://co-job.eprodutiva.com.br/api/categoria/{idCategoria}/vinculos",
+					"protocol": "https",
+					"host": [
+						"co-job",
+						"eprodutiva",
+						"com",
+						"br"
+					],
+					"path": [
+						"api",
+						"categoria",
+						"{idCategoria}",
+						"vinculos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adicionar Competências a um Agente",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "AuthorizationV2",
+						"value": "36302226848-f35acb300fd346474b2a6cd1bca7aed8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"data\": [\n\t\t{\n\t\t\t\"id\":\"\",\n\t\t\t\"agente\":{\n\t\t\t\t\"id\":\"\"\n\t\t\t},\n\t\t\t\"servico\": {\n\t\t\t\t\"id\":\"\"\n\t\t\t},\n\t\t\t\"resourceCategory\": {\n                \"id\": \"\"\n\t\t\t}\n\t\t}\n\t]\n}"
+				},
+				"url": {
+					"raw": "https://co-job.eprodutiva.com.br/api/competence/batch",
+					"protocol": "https",
+					"host": [
+						"co-job",
+						"eprodutiva",
+						"com",
+						"br"
+					],
+					"path": [
+						"api",
+						"competence",
+						"batch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar endereço do Usuário",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "AuthorizationV2",
+						"value": "36302226848-f35acb300fd346474b2a6cd1bca7aed8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://co-job.eprodutiva.com.br/api/endereco/{idUsuario}/0",
+					"protocol": "https",
+					"host": [
+						"co-job",
+						"eprodutiva",
+						"com",
+						"br"
+					],
+					"path": [
+						"api",
+						"endereco",
+						"{idUsuario}",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Regiões",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "AuthorizationV2",
+						"value": "36302226848-f35acb300fd346474b2a6cd1bca7aed8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://co-job.eprodutiva.com.br/api/regiao",
+					"protocol": "https",
+					"host": [
+						"co-job",
+						"eprodutiva",
+						"com",
+						"br"
+					],
+					"path": [
+						"api",
+						"regiao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adicionar Regiões ao Agente",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "AuthorizationV2",
+						"value": "36302226848-f35acb300fd346474b2a6cd1bca7aed8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"data\": [\n\t\t{\n\t\t\t\"id\":\"\", /* id da região */\n\t\t\t\"nome\":\"\"\n\t\t}\n\t]\n}"
+				},
+				"url": {
+					"raw": "https://co-job.eprodutiva.com.br/api/agente/{id}/regiao/batch",
+					"protocol": "https",
+					"host": [
+						"co-job",
+						"eprodutiva",
+						"com",
+						"br"
+					],
+					"path": [
+						"api",
+						"agente",
+						"{id}",
+						"regiao",
+						"batch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Alterar Status da relação Região Agente",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "AuthorizationV2",
+						"value": "36302226848-f35acb300fd346474b2a6cd1bca7aed8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"data\": [\n\t\t{\n\t\t\t\"id\":\"\", /* id da região */\n\t\t\t\"statusModel\":\"\",\n\t\t\t\"nome\":\"\"\n\t\t}\n\t]\n}"
+				},
+				"url": {
+					"raw": "https://co-job.eprodutiva.com.br/api/agente/{id}/regiao/batch",
+					"protocol": "https",
+					"host": [
+						"co-job",
+						"eprodutiva",
+						"com",
+						"br"
+					],
+					"path": [
+						"api",
+						"agente",
+						"{id}",
+						"regiao",
+						"batch"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
